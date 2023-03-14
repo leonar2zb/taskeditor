@@ -1,0 +1,47 @@
+<div class="task-input-container" [class.beauty]="isInputFocused">
+  <div class="section">
+    <ng-content select=".icon"></ng-content>
+    <ng-container *ngIf="!isInputFocused else inputCard">
+      <ng-content></ng-content>
+    </ng-container>
+    <ng-template #inputCard>
+      <div mwlTextInputHighlightContainer>
+        <textarea class="task-input" mwlTextInputElement rows="1" #textarea [(ngModel)]="value"
+          placeholder="Type to add new task" (blur)="onInputBlur()" (keydown)="preventMultiline($event)"
+          (input)="addTags()">
+        </textarea>
+        <mwl-text-input-highlight [tags]="tags" [textInputElement]="textarea">
+        </mwl-text-input-highlight>
+      </div>
+      <div class="avatar" [class.disabled]="isInputEmpty"></div>
+    </ng-template>
+  </div>
+  <div *ngIf="isInputFocused" class="actions">
+    <div class="options" [class.disabled]="isInputEmpty">
+      <button class="btn secondary">
+        <div class="icon maximize"></div> Open
+      </button>
+    </div>
+    <div class="tools" [class.disabled]="isInputEmpty">
+      <button class="btn tool">
+        <div class="icon calendar"></div> Today
+      </button>
+      <button class="btn tool">
+        <div class="icon unlock"></div> Public
+      </button>
+      <button class="btn tool">
+        <div class="icon sun"></div> Highlight
+      </button>
+      <button class="btn tool">
+        <div class="icon circle"></div> Estimation
+      </button>
+    </div>
+    <div class="calls">
+      <button class="btn secondary lg" (click)="resetInput()">Cancel</button>
+      <button class="btn primary lg" *ngIf="isInputEmpty">Ok</button>
+      <button class="btn primary" *ngIf="!isInputEmpty" (click)="onAddAction()">
+        <div class="icon add sm"></div> Add
+      </button>
+    </div>
+  </div>
+</div>

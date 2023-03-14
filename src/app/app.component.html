@@ -1,0 +1,6 @@
+<task-input [inputFocused]="inputFocused$" (onAddTask)="onAddTask($event)">
+  <div class="icon plus"></div>
+  <textarea rows="1" class="task-input" (focusin)="onInputFocus()" placeholder="Type to add new task">
+</textarea>
+</task-input>
+<task-list></task-list>

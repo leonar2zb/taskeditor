@@ -1,0 +1,75 @@
+:host ::ng-deep {
+
+  .budge {
+    cursor: pointer;
+    display: inline-flex;
+    padding: 2px 6px 0 2px;
+    border-radius: 8px;
+    align-items: baseline;
+    gap: 4px;
+
+    .avatar {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+      flex-shrink: 0;
+      background-image: url("../../assets/avatar.jpeg");
+    }
+
+    &.email {
+      color: #F58E0A;
+      background-color: #FFE6C7;
+    }
+
+    &.hashtag {
+      color: #702EE6;
+      background-color: #DBC7FF;
+    }
+
+    &.tag {
+      color: #07A873;
+      background-color: #ADF0D9;
+    }
+
+    &.url {
+      color: #007FFF;
+      background-color: #D6EBFF;
+    }
+
+    .icon {
+      mask-repeat: no-repeat;
+      mask-position: center;
+      height: 14px;
+      width: 14px;
+      mask-size: cover;
+    }
+
+    .mail {
+      mask-image: url("../../assets/mail.svg");
+      background-color: #F58E0A;
+    }
+
+    .link {
+      mask-image: url("../../assets/link.svg");
+      background-color: #007FFF;
+    }
+  }
+
+  .square {
+    mask-image: url("../../assets/square.svg");
+    background-color: #8A94A6;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+
+  .x-square {
+    mask-image: url("../../assets/x-square.svg");
+    background-color: #07A873;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+  }
+}

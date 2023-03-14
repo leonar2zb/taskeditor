@@ -1,0 +1,12 @@
+:host {
+  margin: 0 auto;
+  display: block;
+  padding: 56px;
+
+  .plus {
+    mask-image: url("../assets/plus-square.svg");
+    background-color: var(--blue);
+    height: 24px;
+    width: 24px;
+  }
+}

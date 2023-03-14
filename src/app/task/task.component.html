@@ -1,0 +1,5 @@
+<task-input [inputFocused]="inputFocused$" [text]="text" (onAddTask)="updateTask($event)">
+  <div class="icon square" *ngIf="!isDone" (click)="toggleStatus()"></div>
+  <div class="icon x-square" *ngIf="isDone" (click)="toggleStatus()"></div>
+  <p class="task" [innerHTML]="value" (click)="onInputFocus()"></p>
+</task-input>

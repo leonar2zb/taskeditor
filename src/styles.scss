@@ -1,0 +1,34 @@
+@mixin font {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+html {
+  --primary: #0D55CF;
+  --secondary: #EAF0F5;
+  --blue: #007FFF;
+  --gray-light: #8A94A6;
+  --dark-blue: #04142F;
+  @include font
+}
+
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+textarea, input {
+  @include font;
+}
+
+.icon {
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--line-color);
+  height: 20px;
+  width: 20px;
+  -webkit-mask-size: cover;
+}

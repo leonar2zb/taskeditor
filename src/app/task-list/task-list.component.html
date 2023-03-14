@@ -1,0 +1,3 @@
+<task *ngFor="let task of taskService.tasks | async" [text]="task.text" [tags]="task.tags" [id]="task.id"
+      [isDone]="task.isDone">
+</task>
